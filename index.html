@@ -5,8 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header>
+        <div>
+            <h1>Library</h1>
+            <nav>
+                <div id="loggedOut">
+                    <button id="logInBtn">Log in</button>
+                </div>
+                <div id="loggedIn">
+                    <button id="accountBtn">Account</button>
+                    <button id="logOutBtn">Log out</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <button id="addBookBtn">+ Add book</button>
+        <div id="booksGrid"></div>
+    </main>
+    <footer>
+        <p>
+            Copyright ©
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            Zoltan Orosz
+        </p>
+        <a href="https://github.com/ozoli99" target="_blank"></a>
+    </footer>
+    <div id="addBookModal">
+        <form id="addBookForm">
+            <h3>Add new book</h3>
+            <input type="text" id="title" placeholder="Title" required maxlength="100"/>
+            <p id="errorMsg"></p>
+            <input type="text" id="author" placeholder="Author" required maxlength="100"/>
+            <input type="number" id="pages" placeholder="Pages" required maxlength="10000"/>
+            <div class="is-read">
+                <label for="is-read">Have you read it?</label>
+                <input type="checkbox" id="isRead"/>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="accountModal"></div>
+    <div id="overlay"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
