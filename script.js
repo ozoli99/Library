@@ -86,3 +86,11 @@ const closeAccountModal = () => {
     accountModal.classList.remove("active");
     overlay.classList.remove("active");
 };
+
+const closeAllModals = () => {
+    closeAddBookModal();
+    closeAccountModal();
+};
+
+const handleKeyboardInput = (e) => { if (e.key === "Escape") closeAllModals(); }
+
