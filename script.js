@@ -198,3 +198,9 @@ const toggleRead = (e) => {
         updateBooksGrid();
     }
 };
+
+accountBtn.onclick = openAccountModal;
+addBookBtn.onclick = openAddBookModal;
+overlay.onclick = closeAllModals;
+addBookForm.onsubmit = addBook;
+window.onkeydown = handleKeyboardInput;
