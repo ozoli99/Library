@@ -32,3 +32,16 @@ class Library {
 }
 
 const library = new Library();
+
+// User Interface
+
+const accountBtn = document.querySelector("#accountBtn");
+const accountModal = document.querySelector("#accountModal");
+const addBookBtn = document.querySelector("#addBookBtn");
+const addBookModal = document.querySelector("#addBookModal");
+const errorMsg = document.querySelector("#errorMsg");
+const overlay = document.querySelector("#overlay");
+const addBookForm = document.querySelector("#addBookForm");
+const booksGrid = document.querySelector("#booksGrid");
+const loggedIn = document.querySelector("#loggedIn");
+const loggedOut = document.querySelector("#loggedOut");
