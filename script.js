@@ -45,3 +45,21 @@ const addBookForm = document.querySelector("#addBookForm");
 const booksGrid = document.querySelector("#booksGrid");
 const loggedIn = document.querySelector("#loggedIn");
 const loggedOut = document.querySelector("#loggedOut");
+
+const setupNavbar = (user) => {
+    if (user) {
+        loggedIn.classList.add("active");
+        loggedOut.classList.remove("active");
+    } else {
+        loggedIn.classList.remove("active");
+        loggedOut.classList.add("active");
+    }
+};
+
+const setupAccountModal = (user) => {
+    if (user) {
+        accountModal.innerHTML = `<p>Logged in as</p><p><strong>${user.email.split('@')[0]}</strong></p>`;
+    } else {
+        accountModal.innerHTML = ``;
+    }
+};
