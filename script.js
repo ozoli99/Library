@@ -76,3 +76,13 @@ const closeAddBookModal = () => {
     errorMsg.classList.remove("active");
     errorMsg.textContent = "";
 };
+
+const openAccountModal = () => {
+    accountModal.classList.add("active");
+    overlay.classList.add("active");
+};
+
+const closeAccountModal = () => {
+    accountModal.classList.remove("active");
+    overlay.classList.remove("active");
+};
