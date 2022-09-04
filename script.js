@@ -220,3 +220,33 @@ const restoreLocal = () => {
         library.books = [];
     }
 };
+
+// Auth
+
+const auth = firebase.auth();
+const logInBtn = document.querySelector("#logInBtn");
+const logOutBtn = document.querySelector("#logOutBtn");
+
+auth.onAuthStateChanged(async (user) => {
+    if (user) {
+        setupRealTimeListener();
+    } else {
+        if (unsubscribe) unsubscribe();
+        restoreLocal();
+        updateBooksGrid();
+    }
+    setupAccountModal(user);
+    setupNavbar(user);
+});
+
+const signIn = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+};
+
+const signOut = () => {
+    auth.signOut();
+};
+
+logInBtn.onclick = signIn;
+logOutBtn.onclick = signOut;
